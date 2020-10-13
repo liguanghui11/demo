@@ -3,14 +3,11 @@ package com.example.demo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.config.client.ConfigServicePropertySourceLocator;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
 
 /**
  * @author ：ligh
@@ -32,6 +29,15 @@ public class HelloHandle {
         logger.info("访问者ip"+ getIpAddr(request));
 
         return "Hello SpringBoot Project.";
+    }
+
+    @RequestMapping("/test")
+    @ResponseBody
+    public String testSpringBoot() {
+
+        logger.info("访问者ip"+ getIpAddr(request));
+
+        return "/test.html";
     }
 
 
