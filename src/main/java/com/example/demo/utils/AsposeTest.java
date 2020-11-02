@@ -3,6 +3,9 @@ package com.example.demo.utils;
 import com.aspose.words.Document;
 import com.aspose.words.SaveFormat;
 
+import java.io.File;
+import java.io.FileInputStream;
+
 /**
  * @author ：ligh
  * @date ：Created in 2020/10/29 0029 14:12
@@ -20,11 +23,20 @@ public class AsposeTest {
         wpd.save(dir + "output.pdf", SaveFormat.PDF);
         wpd.save(dir + "output.html", SaveFormat.HTML);
 
+        fomathtml(dir + "output.pdf");
+
     }
 
-    public String fomathtml(String text){
-        StringBuilder builder = new StringBuilder(text);
+    public static  String fomathtml(String file) throws Exception{
+        //StringBuilder builder = new StringBuilder(text);
 
+        FileInputStream inputStream = new FileInputStream(new File(file));
+        byte[] bytes = new byte[2048];
+        int i = 0;
+        while ((i = inputStream.read(bytes)) > 0){
+            String s = new String(bytes);
+            System.out.println(s);
+        }
 
         return null;
 

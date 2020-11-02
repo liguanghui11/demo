@@ -47,6 +47,6 @@ public class PdfToWord {
 class MainClass {
     public static void main(String[] args) {
         PdfToWord convert=new PdfToWord();
-        convert.convertText("F:\\测试\\output.pdf");
+        convert.convertText("E:\\协议\\e文件\\2020_10_30_14_50_01.pdf");
     }
 }
